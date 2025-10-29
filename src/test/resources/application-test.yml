@@ -1,0 +1,47 @@
+spring:
+  application:
+    name: sistema-gestion-reportes-test
+  
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: 
+  
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.H2Dialect
+  
+  h2:
+    console:
+      enabled: false
+  
+  mail:
+    host: localhost
+    port: 3025
+    username: test
+    password: test
+    properties:
+      mail:
+        smtp:
+          auth: false
+          starttls:
+            enable: false
+
+app:
+  upload:
+    dir: ${java.io.tmpdir}/uploads-test
+  jwt:
+    secret: testSecretKeyForJWTTokenGeneration
+    expiration: 86400000
+  scheduler:
+    enabled: false
+
+logging:
+  level:
+    com.reto.spring.llanogas: INFO
